@@ -56,11 +56,11 @@
     }
 
     .work-item {
-      position: relative;
-      overflow: hidden;
-      box-shadow: 2px 4px 20px rgba(0,0,0,0.12);
-      transition: box-shadow 0.3s ease;
-    }
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 4px 20px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s ease, transform 0.2s ease-out;
+}
 
     .work-item:hover {
       z-index: 99;
@@ -206,6 +206,28 @@
   </div>
 
   <footer>© 2026 宋睿轩冰 — ALL RIGHTS RESERVED</footer>
+<script>
+  function updateScale() {
+    const items = document.querySelectorAll('.work-item');
+    const centerY = window.innerHeight / 2;
+
+    items.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const itemCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(centerY - itemCenter);
+      const maxDistance = window.innerHeight;
+      
+      let scale = 1 - (distance / maxDistance) * 0.15;
+      scale = Math.max(0.85, Math.min(1, scale));
+      
+      el.style.transform = `scale(${scale})`;
+    });
+  }
+
+  window.addEventListener('scroll', updateScale);
+  window.addEventListener('resize', updateScale);
+  updateScale();
+</script>
 
 </body>
 </html>
