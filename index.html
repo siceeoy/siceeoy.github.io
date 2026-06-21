@@ -206,15 +206,6 @@
   </div>
 
   <footer>© 2026 宋睿轩冰 — ALL RIGHTS RESERVED</footer>
-<script>
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    document.querySelectorAll('.work-item').forEach((el, i) => {
-      const speed = (i % 3 === 0) ? 0.05 : (i % 3 === 1) ? 0.08 : 0.03;
-      const offset = scrollY * speed;
-      el.style.transform = `translateY(${offset}px)`;
-    });
-  });
-</script>
+
 </body>
 </html>
