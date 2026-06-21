@@ -8,175 +8,213 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background: #ffffff;
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23f5e6c8' stroke-width='1' opacity='0.6'%3E%3Cellipse cx='400' cy='400' rx='300' ry='200'/%3E%3Cellipse cx='200' cy='200' rx='150' ry='100'/%3E%3Cellipse cx='600' cy='600' rx='200' ry='150'/%3E%3Cpath d='M100,400 Q200,200 400,300 T700,400'/%3E%3Cpath d='M0,300 Q150,100 300,200 T600,300'/%3E%3Cpath d='M200,600 Q350,400 500,500 T800,600'/%3E%3Cpath d='M50,500 Q200,300 400,400 T750,500'/%3E%3Ccircle cx='150' cy='300' r='80'/%3E%3Ccircle cx='650' cy='200' r='60'/%3E%3Ccircle cx='300' cy='650' r='100'/%3E%3Cpath d='M400,100 Q500,50 600,100 T800,200'/%3E%3Cpath d='M0,600 Q100,500 200,550 T400,600'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 800px 800px;
       font-family: 'Arial Black', Arial, sans-serif;
       overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 80px 20px 20px;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 900;
       color: #00ff88;
-      letter-spacing: 4px;
+      letter-spacing: 6px;
       text-transform: uppercase;
     }
 
     header p {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #aaa;
-      margin-top: 10px;
+      margin-top: 12px;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
     .section-title {
       text-align: center;
-      padding: 80px 20px 0;
-      font-size: 1rem;
+      padding: 100px 20px 0;
+      font-size: 0.85rem;
       font-weight: 900;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
       color: #00ff88;
       text-transform: uppercase;
     }
 
-    .parallax-wrap {
-      position: relative;
-      min-height: 700px;
-      margin-bottom: 80px;
-    }
-
     .category-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
       color: #00ff88;
       letter-spacing: 2px;
       text-transform: uppercase;
-      position: absolute;
     }
 
     .work-item {
-      position: absolute;
+      position: relative;
       overflow: hidden;
-      box-shadow: 2px 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 2px 4px 20px rgba(0,0,0,0.12);
+      transition: box-shadow 0.3s ease;
     }
 
     .work-item:hover {
       z-index: 99;
-      box-shadow: 4px 8px 30px rgba(0,255,136,0.3);
+      box-shadow: 4px 8px 30px rgba(0,255,136,0.25);
     }
 
-    /* 占位色块，之后换成真实图片 */
-    .placeholder {
+    .work-item img {
       width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: white;
+      height: auto;
+      display: block;
     }
+
+    .row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .poster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .poster-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
     footer {
       text-align: center;
-      padding: 60px 20px;
-      font-size: 0.75rem;
-      color: #bbb;
-      letter-spacing: 2px;
+      padding: 80px 20px;
+      font-size: 0.7rem;
+      color: #ccc;
+      letter-spacing: 3px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>SICE</h1>
-    <p>字体设计 · 海报设计 · Logo设计 · 摄影</p >
+    <h1>宋睿轩冰的作品集</h1>
+    <p>字体设计 · 海报设计 · 3D建模</p>
   </header>
 
   <!-- 字体设计 -->
-  <p class="section-title">Typography</p >
-  <div class="parallax-wrap">
-    <span class="category-label" style="top:30px; left:40px;">字体设计</span>
+  <p class="section-title">Typography</p>
+  <div style="max-width: 700px; margin: 0 auto 100px auto; padding: 0 20px;">
+    <p class="category-label" style="display: block; margin-bottom: 20px;">字体设计</p>
 
-    <div class="work-item" style="width:280px;height:200px;top:80px;left:60px;transform:rotate(-3deg);">
-      <div class="placeholder" style="background:#1a1a1a;">TYPOGRAPHY 01</div>
+    <div class="row" style="gap: 20px; margin-bottom: 20px;">
+      <div class="work-item" style="width: 50%;">
+        <img src="hammer01.png" alt="HAMMER 01">
+      </div>
+      <div class="work-item" style="width: 50%;">
+        <img src="hammer02.png" alt="HAMMER 02">
+      </div>
     </div>
-    <div class="work-item" style="width:200px;height:260px;top:60px;left:380px;transform:rotate(2deg);">
-      <div class="placeholder" style="background:#222;">TYPOGRAPHY 02</div>
+
+    <div class="work-item" style="width: 100%;">
+     <img src="tshirt.jpg" alt="T-SHIRT MOCKUP" style="max-height: 500px; object-fit: contain; width: 100%;">
+
     </div>
-    <div class="work-item" style="width:240px;height:180px;top:300px;left:200px;transform:rotate(-1deg);">
-      <div class="placeholder" style="background:#2a2a2a;">TYPOGRAPHY 03</div>
+  </div>
+
+    <div class="work-item" style="width: 100%; margin-top: 20px;">
+      <img src="icey01.png" alt="ICEY 花体版" style="max-height: 300px; object-fit: contain; width: 100%; background: #fff;">
+    </div>
+
+    <div class="work-item" style="width: 100%; margin-top: 20px;">
+      <img src="icey02.png" alt="ICEY 像素版" style="max-height: 300px; object-fit: contain; width: 100%; background: #fff;">
     </div>
   </div>
 
   <!-- 海报设计 -->
-  <p class="section-title">Poster Design</p >
-  <div class="parallax-wrap">
-    <span class="category-label" style="top:30px; left:40px;">海报设计</span>
+  <p class="section-title">Poster Design</p>
+  <div style="max-width: 900px; margin: 0 auto 100px auto; padding: 0 20px;">
+    <p class="category-label" style="display: block; margin-bottom: 20px;">海报设计</p>
 
-    <div class="work-item" style="width:220px;height:300px;top:70px;left:100px;transform:rotate(2deg);">
-      <div class="placeholder" style="background:#111;">POSTER 01</div>
-    </div>
-    <div class="work-item" style="width:280px;height:200px;top:100px;left:360px;transform:rotate(-2deg);">
-      <div class="placeholder" style="background:#1c1c1c;">POSTER 02</div>
-    </div>
-    <div class="work-item" style="width:180px;height:240px;top:330px;left:230px;transform:rotate(1deg);">
-      <div class="placeholder" style="background:#252525;">POSTER 03</div>
+    <div class="poster-grid">
+      <div class="work-item poster">
+        <img src="dalmatian.jpg" alt="DALMATIAN">
+      </div>
+      <div class="work-item poster">
+        <img src="abyssinian.jpg" alt="ABYSSINIAN">
+      </div>
+      <div class="work-item poster">
+        <img src="reddeer.jpg" alt="RED DEER">
+      </div>
+      <div class="work-item poster">
+        <img src="saxophone.jpg" alt="SAXOPHONE">
+      </div>
+      <div class="work-item poster">
+        <img src="piano.png" alt="PIANO">
+      </div>
+      <div class="work-item poster">
+        <img src="jasmine.png" alt="AFRICAN JASMINE">
+      </div>
     </div>
   </div>
 
-  <!-- Logo设计 -->
-  <p class="section-title">Logo Design</p >
-  <div class="parallax-wrap">
-    <span class="category-label" style="top:30px; left:40px;">Logo 设计</span>
+  <!-- 3D建模 -->
+  <p class="section-title">3D Modeling</p>
+  <div style="max-width: 700px; margin: 0 auto 100px auto; padding: 0 20px;">
+    <p class="category-label" style="display: block; margin-bottom: 20px;">3D 建模</p>
 
-    <div class="work-item" style="width:240px;height:240px;top:80px;left:80px;transform:rotate(-2deg);">
-      <div class="placeholder" style="background:#0a0a0a;">LOGO 01</div>
+    <div class="work-item" style="width: 100%; margin-bottom: 16px;">
+      <img src="bedroom01.jpg" alt="MY BEDROOM 01">
     </div>
-    <div class="work-item" style="width:200px;height:200px;top:60px;left:350px;transform:rotate(3deg);">
-      <div class="placeholder" style="background:#151515;">LOGO 02</div>
+    <div class="work-item" style="width: 100%; margin-bottom: 16px;">
+      <img src="bedroom02.jpg" alt="MY BEDROOM 02">
     </div>
-    <div class="work-item" style="width:220px;height:180px;top:310px;left:200px;transform:rotate(-1deg);">
-      <div class="placeholder" style="background:#1e1e1e;">LOGO 03</div>
+    <div class="work-item" style="width: 100%;">
+      <img src="bedroom03.jpg" alt="MY BEDROOM 03">
     </div>
   </div>
 
-  <!-- 摄影 -->
-  <p class="section-title">Photography</p >
-  <div class="parallax-wrap">
-    <span class="category-label" style="top:30px; left:40px;">摄影</span>
-
-    <div class="work-item" style="width:300px;height:200px;top:80px;left:40px;transform:rotate(-1deg);">
-      <div class="placeholder" style="background:#0d0d0d;">PHOTO 01</div>
-    </div>
-    <div class="work-item" style="width:200px;height:280px;top:50px;left:370px;transform:rotate(2deg);">
-      <div class="placeholder" style="background:#181818;">PHOTO 02</div>
-    </div>
-    <div class="work-item" style="width:250px;height:180px;top:320px;left:160px;transform:rotate(-2deg);">
-      <div class="placeholder" style="background:#202020;">PHOTO 03</div>
-    </div>
+  <!-- 关于我 -->
+  <p class="section-title">About Me</p>
+  <div style="max-width: 600px; margin: 0 auto 100px auto; text-align: center; padding: 0 20px;">
+    <p style="font-size: 1rem; line-height: 1.8; color: #333; letter-spacing: 1px;">
+      数字媒体艺术专业学生，专注字体设计、海报创作与品牌视觉。<br>
+      喜欢在传统与现代之间寻找设计语言。
+    </p>
   </div>
 
-  <footer>© 2026 SICE — ALL RIGHTS RESERVED</footer>
+  <!-- 联系方式 -->
+  <p class="section-title">Contact</p>
+  <div style="max-width: 600px; margin: 0 auto 60px auto; text-align: center; padding: 0 20px;">
+    <p style="font-size: 0.9rem; line-height: 2; color: #333; letter-spacing: 1px;">
+      Email：15532248808@163.com<br>
+      微信：Sice05
+    </p>
+  </div>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const baseRotates = ['-3deg','2deg','-1deg','2deg','-2deg','1deg','-2deg','3deg','-1deg','-1deg','2deg','-2deg'];
-      document.querySelectorAll('.work-item').forEach((el, i) => {
-        const speed = (i % 3 === 0) ? 0.08 : (i % 3 === 1) ? 0.12 : 0.05;
-        const offset = scrollY * speed;
-        const deg = baseRotates[i] || '0deg';
-        el.style.transform = `translateY(${offset}px) rotate(${deg})`;
-      });
+  <footer>© 2026 宋睿轩冰 — ALL RIGHTS RESERVED</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    document.querySelectorAll('.work-item').forEach((el, i) => {
+      const speed = (i % 3 === 0) ? 0.05 : (i % 3 === 1) ? 0.08 : 0.03;
+      const offset = scrollY * speed;
+      el.style.transform = `translateY(${offset}px)`;
     });
-  </script>
-
+  });
+</script>
 </body>
 </html>
